@@ -14,7 +14,7 @@ inactive_underline=
 separator="·"
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun Xfdesktop Xfce4-panel Gjs"
-empty_desktop_message="Desktop"
+empty_desktop_message=""
 
 char_limit=20
 max_windows=4
