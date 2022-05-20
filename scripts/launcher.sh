@@ -13,7 +13,7 @@ FILE="$HOME/.config/polybar/scripts/rofi/colors.rasi"
 #!/bin/bash
 
 Audio () {
-source="$(pactl list short sinks | cut -f 2 | rofi -dpi 1 -theme ~/.config/polybar/scripts/rofi/launcher.rasi -dmenu -p "Change audio:")";
+source="$(pactl list short sinks | cut -f 2 | rofi -dpi 1 -dmenu -p "Change audio:")";
 inputs="$(pactl list sink-inputs short | cut -f 1)";
 
 for input in $inputs; do
@@ -26,7 +26,7 @@ pactl set-default-sink "$source";
 # https://www.freedesktop.org/software/systemd/man/systemd-sleep.conf.html#Description
 }
 
-chosen=$(echo -e "[Cancel]\nMenu\nAudio-Selection\nVs-Code\nSpotify\nAudio-Vis\nFirefox" | rofi -dmenu -i -theme ~/.config/polybar/scripts/rofi/launcher.rasi -p run:)
+chosen=$(echo -e "[Cancel]\nMenu\nAudio-Selection\nVs-Code\nSpotify\nAudio-Vis\nFirefox" | rofi -dmenu -i -p run:)
 if [[ $chosen = "Menu" ]]; then
 	rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/scripts/rofi/launcher.rasi
 elif [[ $chosen = "Audio-Selection" ]]; then
